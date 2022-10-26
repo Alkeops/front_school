@@ -14,18 +14,18 @@ export default function User() {
   const { data: courses } = useCourses();
   const { data: students } = useStudents();
   const { data: student } = useStudent(user);
-
   const [list, setList] = useState({
     courses: [],
     friends: [],
   });
 
+  //TODO refactor
   useEffect(() => {
     if (user !== "admin" && student && students && courses) {
-      let _courses = student.courses.map((course) =>
+      let _courses = student?.courses?.map((course) =>
         courses.find((c) => c._id === course)
       );
-      let _friends = student.friends.map((friend) =>
+      let _friends = student?.friends?.map((friend) =>
         students.find((s) => s._id === friend)
       );
       setList({
@@ -34,9 +34,14 @@ export default function User() {
       });
     }
   }, [student, students, courses]);
+
   return (
+    
     <div className={cn(s[PREFIX])}>
-      {user !== "admin" && list.courses.length ? (
+      <span className={s[`${PREFIX}__welcome`]}>
+        ¡Hola! {student?.name || "Admin"} es un gusto tenerte de vuelta
+      </span>
+      {user !== "admin" && list.courses?.length ? (
         <Section title="Mis cursos">
           {list.courses?.map(
             ({ _id, name, description, price, tags, students }) => (
@@ -73,7 +78,7 @@ export default function User() {
           )}
         </Section>
       ) : null}
-      {list.friends.length || user === "admin" ? (
+      {list.friends?.length || user === "admin" ? (
         <Section
           title={user !== "admin" ? "Amigos" : "Todos los estudiantes"}
           variant="friends"

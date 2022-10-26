@@ -20,11 +20,14 @@ export const StudentCard = ({ name, username, courses, friends }) => {
         </div>
         <div className={s[`${PREFIX}__courses`]}>
           <span>Total de cursos: {courses.length}</span>
-          {courses.map((course) => (
-            <span key={course}>
-              {listCourses.find(({ _id }) => _id === course).name}
-            </span>
-          ))}
+          <div className={s[`${PREFIX}__courses-content`]}>
+            {courses &&
+              courses.map((course) => (
+                <span key={course}>
+                  {listCourses?.find(({ _id }) => _id === course).name}
+                </span>
+              ))}
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import { ToggleTheme } from "components";
-
 import cn from "classnames";
 import s from "./Navbar.module.scss";
 import { useCourses, useStudent, useStudents } from "@hooks";
@@ -34,10 +33,12 @@ export const Navbar = () => {
               <div className={s[`${PREFIX}__menu`]}>
                 {[...students.data, { username: "admin" }].map((_student) => (
                   <div
+                    key={_student._id}
                     className={s[`${PREFIX}__menu-item`]}
                     onClick={() => {
                       router.push(`/${_student.username}`);
                       queryClient.invalidateQueries(["student"]);
+                      queryClient.invalidateQueries(["students"]);
                       setIsOpen(false);
                     }}
                   >

@@ -6,4 +6,8 @@
     @include media-up($breakpoint-sm){
         grid-gap: 24px;
     }
+    &__welcome{
+        font-size: 40px;
+        margin: 30px 0;
+    }
 }

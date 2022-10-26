@@ -1,5 +1,6 @@
 import cn from "classnames";
 import { Button } from "components/common";
+import { useRef } from "react";
 import s from "./CourseCard.module.scss";
 
 const PREFIX = "course-card";
@@ -21,11 +22,11 @@ export const CourseCard = ({
   type,
   subscribed,
 }) => {
-  const color = colors[Math.floor(Math.random() * 5) + 1];
+  const color = useRef(colors[Math.floor(Math.random() * 5) + 1]);
   return (
     <div
       className={cn(s[PREFIX], {
-        [s[`${PREFIX}--${color}`]]: color,
+        [s[`${PREFIX}--${color.current}`]]: color.current,
       })}
     >
       <div className={s[`${PREFIX}__data`]}>

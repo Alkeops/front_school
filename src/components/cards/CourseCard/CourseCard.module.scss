@@ -37,9 +37,13 @@
         grid-gap: 16px;
 
         &-name {
-            font-family: $font-secondary;
             font-size: 22px;
             line-height: 1.1;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--clr-border-primary);
+            &::first-letter{
+                text-transform: uppercase;
+            }
         }
 
         &-description {
@@ -86,7 +90,8 @@
         background: var(--clr-salmon);
 
         :global(*) {
-            border-color: var(--clr-contrast)
+            border-color: var(--clr-dark);
+            color: var(--clr-dark);
         }
     }
 

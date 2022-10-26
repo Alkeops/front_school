@@ -4,6 +4,7 @@
     border-radius: 8px;
     border: 3px solid var(--clr-salmon);
     background: var(--clr-bg-primary);
+
     &__header {
         padding: 20px;
         display: flex;
@@ -20,22 +21,40 @@
     &__data {
         display: grid;
         gap: 8px;
+
         &-name {
             font-size: 25px;
             font-weight: 700;
-            font-family: $font-secondary;
         }
-        &-username{
+
+        &-username {
             font-size: 18px;
         }
     }
-    &__content{
+
+    &__content {
         padding: 0 20px;
     }
-    &__courses{
+
+    &__courses {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         grid-gap: 16px;
         padding: 16px 0;
+        &-content {
+            border-top: 1px solid var(--clr-border-primary);
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 24px;
+            padding: 16px 0;
+
+            :global(span) {
+                font-size: 18px;
+
+                &::first-letter {
+                    text-transform: uppercase;
+                }
+            }
+        }
     }
 }
