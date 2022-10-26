@@ -1,10 +1,12 @@
-import { CourseCard, Section, StudentCard } from "@components";
-import cn from "classnames";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { useQueryClient } from "@tanstack/react-query";
-import s from "./user.module.scss";
+
 import { useCourses, useStudents, useStudent } from "@hooks";
+import { CourseCard, Section, StudentCard } from "@components";
+
+import cn from "classnames";
+import s from "./user.module.scss";
 const PREFIX = "user";
 
 export default function User() {
