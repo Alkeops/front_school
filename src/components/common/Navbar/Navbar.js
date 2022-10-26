@@ -22,7 +22,7 @@ export const Navbar = () => {
         <span className={s[`${PREFIX}__title`]}>School</span>
         <div className={s[`${PREFIX}__right`]}>
           <div className={s[`${PREFIX}__user-data`]}>
-            <span>Ver la perspectiva de:</span>
+            <span>Ver:</span>
             <span
               className={s[`${PREFIX}__user`]}
               onClick={() => setIsOpen(!isOpen)}
