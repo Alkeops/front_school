@@ -31,9 +31,9 @@ export const Navbar = () => {
             </span>
             {isOpen ? (
               <div className={s[`${PREFIX}__menu`]}>
-                {[...students.data, { username: "admin" }].map((_student) => (
+                {[...students.data, { username: "admin" }].map((_student, index) => (
                   <div
-                    key={_student._id}
+                    key={index}
                     className={s[`${PREFIX}__menu-item`]}
                     onClick={() => {
                       router.push(`/${_student.username}`);
