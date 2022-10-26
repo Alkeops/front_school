@@ -1,0 +1,130 @@
+@import "@vars";
+
+.course-card {
+    border: 1px solid var(--clr-border-primary);
+    border-radius: 8px;
+    padding: clamp(8px, 5%, 24px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: var(--clr-contrast);
+        border-radius: 8px;
+        z-index: -1;
+        transition: .3s;
+    }
+
+    &:hover {
+        &::before {
+            top: 6px;
+            left: 6px;
+            right: -6px;
+            bottom: -6px;
+        }
+    }
+
+    &__data {
+        height: 100px;
+        display: grid;
+        grid-gap: 16px;
+
+        &-name {
+            font-family: $font-secondary;
+            font-size: 22px;
+            line-height: 1.1;
+        }
+
+        &-description {
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: lighter;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        &-price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    &__button {
+        right: 10px;
+        bottom: 10px;
+        border-radius: 4px;
+        padding: 5px 10px;
+        position: absolute;
+
+        &:hover {
+            background: var(--clr-bg-primary);
+            color: var(--clr-primary);
+        }
+    }
+
+    &__tags {
+        display: flex;
+        gap: 8px;
+
+        &-t {
+            max-width: max-content;
+            border: 1px solid var(--clr-border-primary);
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+    }
+
+    &--salmon {
+        background: var(--clr-salmon);
+
+        :global(*) {
+            border-color: var(--clr-contrast)
+        }
+    }
+
+    &--yellow {
+        background: var(--clr-yellow);
+
+        :global(*) {
+            color: var(--clr-dark);
+            border-color: var(--clr-dark);
+        }
+    }
+
+    &--purple {
+        background: var(--clr-purple);
+
+        :global(*) {
+            border-color: var(--clr-light);
+            color: var(--clr-light);
+        }
+    }
+
+    &--green {
+        background: var(--clr-green);
+
+        :global(*) {
+            color: var(--clr-dark);
+            border-color: var(--clr-dark);
+        }
+    }
+
+    &--transparent {
+        background: var(--clr-bg-primary);
+
+        :global(.card-button) {
+            &:hover {
+                background: var(--clr-contrast);
+                color: var(--clr-bg-primary);
+            }
+        }
+    }
+}

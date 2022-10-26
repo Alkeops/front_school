@@ -1,0 +1,14 @@
+@import "@vars";
+
+.page-content {
+    padding: 16px 8px;
+    padding-top: calc(65px + 16px);
+
+    @include media-up($breakpoint-sm) {
+        padding: calc(98px + 16px) 16px  32px;
+    }
+    
+    @include media-up($breakpoint-md){
+        padding: calc(98px + 16px) 64px  32px;
+    }
+}

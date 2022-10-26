@@ -1,0 +1,9 @@
+@import "@vars";
+.user{
+    display: grid;
+    grid-auto-flow: rows;
+    grid-gap: 16px;
+    @include media-up($breakpoint-sm){
+        grid-gap: 24px;
+    }
+}

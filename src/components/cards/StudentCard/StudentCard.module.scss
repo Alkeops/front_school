@@ -1,0 +1,41 @@
+@import "@vars";
+
+.student-card {
+    border-radius: 8px;
+    border: 3px solid var(--clr-salmon);
+    background: var(--clr-bg-primary);
+    &__header {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        &-picture {
+            width: 60px;
+            height: 70px;
+            background: var(--clr-salmon);
+        }
+    }
+
+    &__data {
+        display: grid;
+        gap: 8px;
+        &-name {
+            font-size: 25px;
+            font-weight: 700;
+            font-family: $font-secondary;
+        }
+        &-username{
+            font-size: 18px;
+        }
+    }
+    &__content{
+        padding: 0 20px;
+    }
+    &__courses{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 16px;
+        padding: 16px 0;
+    }
+}

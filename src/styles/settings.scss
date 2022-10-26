@@ -1,0 +1,28 @@
+/* FONTS */
+$font-family: "Poppins", sans-serif;
+$font-secondary: 'Kaushan Script', cursive;
+/* BREAKPOINTS */
+$breakpoint-sm: 690px;
+$breakpoint-md: 900px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1800px;
+/* MISC */
+$border-radius: 4px;
+
+@mixin media-up($mq) {
+  @media (min-width: $mq) {
+    @content;
+  }
+}
+
+@mixin media-down($mq) {
+  @media (max-width: $mq) {
+    @content;
+  }
+}
+
+@mixin media-between($mq-min, $mq-max) {
+  @media (min-width: $mq-min) and (max-width: $mq-max) {
+    @content;
+  }
+}
